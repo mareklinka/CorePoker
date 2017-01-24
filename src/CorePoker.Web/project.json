@@ -1,9 +1,7 @@
 {
+  "userSecretsId": "corepoker-3F841ACF-C006-423B-AE21-7FD7A08FFCEE",
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.1.0",
-      "type": "platform"
-    },
+    "CorePoker.Data": "1.0.0-*",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "Microsoft.AspNetCore.Razor.Tools": {
@@ -14,19 +12,26 @@
     "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
     "Microsoft.AspNetCore.SpaServices": "1.1.0-*",
     "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.1.0",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0",
     "Microsoft.Extensions.Configuration.Json": "1.1.0",
-    "Microsoft.Extensions.Configuration.CommandLine": "1.1.0",
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.1.0",
     "Microsoft.Extensions.Logging": "1.1.0",
     "Microsoft.Extensions.Logging.Console": "1.1.0",
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0"
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
+    "Microsoft.NETCore.App": {
+      "version": "1.1.0",
+      "type": "platform"
+    },
+    "MySql.Data.EntityFrameworkCore": "6.10.0-alpha"
   },
 
   "tools": {
     "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
-    "Microsoft.DotNet.Watcher.Tools": "1.1.0-preview4-final"
+    "Microsoft.DotNet.Watcher.Tools": "1.1.0-preview4-final",
+    "Microsoft.Extensions.SecretManager.Tools": "1.1.0-preview4-final"
   },
 
   "frameworks": {
@@ -42,7 +47,7 @@
     "emitEntryPoint": true,
     "preserveCompilationContext": true,
     "compile": {
-      "exclude": ["node_modules"]
+      "exclude": [ "node_modules" ]
     }
   },
 
