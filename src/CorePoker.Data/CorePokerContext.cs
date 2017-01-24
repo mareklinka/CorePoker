@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace CorePoker.Data
 {
@@ -11,22 +9,16 @@ namespace CorePoker.Data
         }
 
         public DbSet<Table> Tables { get; set; }
+        public DbSet<Player> Players { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Table>().HasIndex(p => new {p.PublicId}).IsUnique();
+            modelBuilder.Entity<Table>().HasIndex(p => new { p.Name }).IsUnique();
+
+            modelBuilder.Entity<Player>().HasIndex(e => e.Nickname).IsUnique();
+
+            modelBuilder.Entity<TablePlayer>().HasKey(e => new { e.TableId, e.PlayerId });
         }
-    }
-
-    public class Table
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-    
-
-        [Required]
-        [MaxLength(36)]
-        public string PublicId { get; set; }
     }
 }
