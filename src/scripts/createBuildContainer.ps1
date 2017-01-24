@@ -1,0 +1,1 @@
+docker build -t corepoker-build -f ..\CorePoker.Web\Dockerfile.build ..\CorePoker.Web
